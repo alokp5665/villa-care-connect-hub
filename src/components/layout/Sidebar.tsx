@@ -10,7 +10,7 @@ import {
   LogOut, 
   MessageSquare, 
   Settings, 
-  Tool, 
+  Wrench, 
   UserRound, 
   Users 
 } from "lucide-react";
@@ -29,7 +29,7 @@ export const Sidebar = ({ className, userRole = UserRole.ADMIN }: SidebarProps) 
   // Define navigation links based on user role
   const navigationLinks = [
     { title: 'Dashboard', icon: LayoutDashboard, href: '/dashboard', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN, UserRole.CUSTOMER] },
-    { title: 'Maintenance Requests', icon: Tool, href: '/requests', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN, UserRole.CUSTOMER] },
+    { title: 'Maintenance Requests', icon: Wrench, href: '/requests', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN, UserRole.CUSTOMER] },
     { title: 'Users', icon: Users, href: '/users', roles: [UserRole.ADMIN, UserRole.MANAGER] },
     { title: 'Schedule', icon: Calendar, href: '/schedule', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN] },
     { title: 'Messages', icon: MessageSquare, href: '/messages', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN, UserRole.CUSTOMER] },

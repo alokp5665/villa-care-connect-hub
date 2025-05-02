@@ -1,6 +1,5 @@
-
 import { Button } from "@/components/ui/button";
-import { Globe, Home, MessageSquare, Tool, UserRound, Wrench } from "lucide-react";
+import { Globe, Home, MessageSquare, Wrench, UserRound } from "lucide-react";
 import { Link } from "react-router-dom";
 import LoginForm from "@/components/auth/LoginForm";
 import { useState } from "react";
@@ -65,7 +64,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center p-6 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
               <div className="p-4 bg-primary/10 rounded-full">
-                <Tool className="h-8 w-8 text-primary" />
+                <Wrench className="h-8 w-8 text-primary" />
               </div>
               <h3 className="mt-4 text-xl font-semibold">Request Management</h3>
               <p className="mt-2 text-gray-600">
