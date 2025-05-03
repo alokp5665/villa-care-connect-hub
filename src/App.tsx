@@ -10,6 +10,7 @@ import Requests from "./pages/Requests";
 import Users from "./pages/Users";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/layout/Layout";
+import TechnicianLocation from "./pages/TechnicianLocation";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/requests" element={<Requests />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/technician-location/:requestId?" element={<TechnicianLocation />} />
             {/* These routes would be implemented in future updates */}
             <Route path="/schedule" element={<Dashboard />} /> {/* Placeholder */}
             <Route path="/messages" element={<Dashboard />} /> {/* Placeholder */}
