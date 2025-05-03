@@ -2,14 +2,11 @@
 import { cn } from "@/lib/utils";
 import { UserRole } from "@/types";
 import { 
-  Bell, 
   Calendar, 
   ChevronLeft, 
   Home, 
   LayoutDashboard, 
   LogOut, 
-  MessageSquare, 
-  Settings, 
   Wrench, 
   UserRound, 
   Users 
@@ -26,15 +23,12 @@ export const Sidebar = ({ className, userRole = UserRole.ADMIN }: SidebarProps) 
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
 
-  // Define navigation links based on user role
+  // Define navigation links based on user role - reduced to only essential items
   const navigationLinks = [
     { title: 'Dashboard', icon: LayoutDashboard, href: '/dashboard', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN, UserRole.CUSTOMER] },
     { title: 'Maintenance Requests', icon: Wrench, href: '/requests', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN, UserRole.CUSTOMER] },
     { title: 'Users', icon: Users, href: '/users', roles: [UserRole.ADMIN, UserRole.MANAGER] },
     { title: 'Schedule', icon: Calendar, href: '/schedule', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN] },
-    { title: 'Messages', icon: MessageSquare, href: '/messages', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN, UserRole.CUSTOMER] },
-    { title: 'Notifications', icon: Bell, href: '/notifications', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.TECHNICIAN, UserRole.CUSTOMER] },
-    { title: 'Settings', icon: Settings, href: '/settings', roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.CUSTOMER] },
   ];
 
   // Filter links based on user role
@@ -90,15 +84,7 @@ export const Sidebar = ({ className, userRole = UserRole.ADMIN }: SidebarProps) 
       </div>
 
       <div className="pt-4 border-t border-sidebar-border mt-4">
-        <div 
-          className={cn(
-            "flex items-center py-2 px-3 rounded-md text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors cursor-pointer",
-            collapsed ? "justify-center" : "justify-start"
-          )}
-        >
-          <UserRound className={cn("h-5 w-5", collapsed ? "mx-auto" : "mr-3")} />
-          {!collapsed && <span>Profile</span>}
-        </div>
+        {/* Sign Out button at the bottom */}
         <div 
           className={cn(
             "flex items-center py-2 px-3 rounded-md text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors cursor-pointer",

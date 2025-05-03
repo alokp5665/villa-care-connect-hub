@@ -11,6 +11,7 @@ import Users from "./pages/Users";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/layout/Layout";
 import TechnicianLocation from "./pages/TechnicianLocation";
+import Schedule from "./pages/Schedule";
 
 const queryClient = new QueryClient();
 
@@ -29,11 +30,8 @@ const App = () => (
             <Route path="/requests" element={<Requests />} />
             <Route path="/users" element={<Users />} />
             <Route path="/technician-location/:requestId?" element={<TechnicianLocation />} />
-            {/* These routes would be implemented in future updates */}
-            <Route path="/schedule" element={<Dashboard />} /> {/* Placeholder */}
-            <Route path="/messages" element={<Dashboard />} /> {/* Placeholder */}
-            <Route path="/notifications" element={<Dashboard />} /> {/* Placeholder */}
-            <Route path="/settings" element={<Dashboard />} /> {/* Placeholder */}
+            <Route path="/schedule" element={<Schedule />} />
+            {/* Removed placeholder routes for Messages, Notifications, and Settings */}
           </Route>
           
           {/* Catch-all route */}
